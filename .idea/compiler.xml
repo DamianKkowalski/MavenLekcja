@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="MavenLekcja" options="--add-exports jdk.internal.opt/jdk.internal.joptsimple.util=ALL-UNNAMED" />
+      <module name="MavenLekcja" options="" />
     </option>
   </component>
 </project>
