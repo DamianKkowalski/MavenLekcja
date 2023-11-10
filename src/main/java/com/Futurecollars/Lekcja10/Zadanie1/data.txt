@@ -1,0 +1,3 @@
+Damian,Kowalski,Ustrzyki Dolne,123123123,
+Dorian,Kowalski,Ustrzyki Górne,123432653,
+Dominik,Dominikowski,Podhale,854439230,
