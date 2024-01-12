@@ -7,6 +7,10 @@ public class UrlValidator {
 
     public static boolean validation(String url)
     {
+        if (url == null) {
+            return false;
+        }
+
         String urlRegex = "^(https?|ftp):\\/\\/(www\\.)?[a-zA-Z0-9-]+(\\.[a-zA-Z]{2,})+(\\/[^\\s]*)?$";
 
         Pattern pattern = Pattern.compile(urlRegex);
