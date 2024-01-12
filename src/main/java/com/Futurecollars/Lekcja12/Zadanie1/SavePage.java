@@ -5,7 +5,7 @@ import org.jsoup.nodes.Document;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class savePage {
+public class SavePage {
 
     public static void saveWebpage(String url, String filename) {
         try {
