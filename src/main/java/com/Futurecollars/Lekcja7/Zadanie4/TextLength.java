@@ -1,12 +1,13 @@
 package com.Futurecollars.Lekcja7.Zadanie4;
 
 public class TextLength {
-    public int countLetters (String text)
-    {
-        int i = 0;
+    public Integer countLetters(String text) {
 
-        for (char character : text.toCharArray())
-        {
+        if (text == null){
+            return null;
+        }
+        int i = 0;
+        for (char character : text.toCharArray()) {
             i++;
         }
         System.out.println(i);
