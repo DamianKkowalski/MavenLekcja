@@ -6,20 +6,9 @@ import java.io.IOException;
 
 public class PhoneBookExample {
     public static void main(String[] args) {
+        String filePath = "src/main/java/com/Futurecollars/Lekcja10/Zadanie1/data.txt";
         PhoneBook bookEntry = new PhoneBook();
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/com/Futurecollars/Lekcja10/Zadanie1/data.txt"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                if (data[0] != null && data[1] != null) {
-                    PhoneBookEntry entry = new PhoneBookEntry(data[0], data[1], data[2], data[3]);
-                    bookEntry.addEntry(entry);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        loadPhoneBook(bookEntry, filePath);
       try {
             PhoneBookEntry searchResult = bookEntry.searchByName("Dominik Dominikowski");
             System.out.println("Znaleziono wpis:");
@@ -31,6 +20,23 @@ public class PhoneBookExample {
 
     }
 
+    }
+    private static void loadPhoneBook(PhoneBook phoneBook, String filePath) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length >= 4 && data[0] != null && data[1] != null && data[2] != null ) {
+                    PhoneBookEntry entry = new PhoneBookEntry(data[0], data[1], data[2], data[3]);
+                    phoneBook.addEntry(entry);
+                } else {
+                    System.out.println("Skipping invalid entry: " + line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }}
+
 
 
