@@ -6,9 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 public class UrlValidatorTest {
     @Test
     void validUrlShouldReturnTrue() {
-        assertTrue(UrlValidator.validation("https://www.example.com"));
-        assertTrue(UrlValidator.validation("http://example.com"));
-        assertTrue(UrlValidator.validation("ftp://ftp.example.com/path/to/file"));
+        assertTrue(UrlValidator.validation("http://www.onet.pl"));
+        assertTrue(UrlValidator.validation("https://mail.google.com"));
+        assertTrue(UrlValidator.validation("http://wiadmosci.onet.pl"));
+        assertTrue(UrlValidator.validation("http://onet.pl"));
     }
     @Test
     void invalidUrlShouldReturnFalse() {
