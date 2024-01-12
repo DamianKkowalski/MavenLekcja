@@ -10,18 +10,18 @@ public class CinemaHallGroup {
 
 
         List<CinemaHall> cinemaHalls = List.of(
-                new CinemaHall("Sala 1", "3D"),
-                new CinemaHall("Sala 2", "4D"),
-                new CinemaHall("Sala 3", "2D"),
-                new CinemaHall("Sala 4", "3D"),
-                new CinemaHall("Sala 5", "4D"),
-                new CinemaHall("Sala 6", "2D"),
-                new CinemaHall("Sala 7", "3D"),
-                new CinemaHall("Sala 8", "3D"),
-                new CinemaHall("Sala 9", "4D"),
-                new CinemaHall("Sala 10", "4D")
+                new CinemaHall(HallNumber.Sala_1, RoomType._3D),
+                new CinemaHall(HallNumber.Sala_2, RoomType._3D),
+                new CinemaHall(HallNumber.Sala_3, RoomType._3D),
+                new CinemaHall(HallNumber.Sala_4, RoomType._3D),
+                new CinemaHall(HallNumber.Sala_5, RoomType._2D),
+                new CinemaHall(HallNumber.Sala_6, RoomType._4D),
+                new CinemaHall(HallNumber.Sala_7, RoomType._2D),
+                new CinemaHall(HallNumber.Sala_8, RoomType._3D),
+                new CinemaHall(HallNumber.Sala_9, RoomType._2D),
+                new CinemaHall(HallNumber.Sala_10, RoomType._4D)
         );
-        Map<String, Long> hallsGroupedByType = cinemaHalls.stream()
+        Map<RoomType, Long> hallsGroupedByType = cinemaHalls.stream()
                 .collect(Collectors.groupingBy(CinemaHall::getType, Collectors.counting()));
         hallsGroupedByType.forEach((type, count) -> System.out.println("Typ sali " + type + ", liczba sal: " + count));
 
