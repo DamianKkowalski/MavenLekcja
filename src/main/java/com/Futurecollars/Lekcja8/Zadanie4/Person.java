@@ -1,6 +1,6 @@
 package com.Futurecollars.Lekcja8.Zadanie4;
 
-public class Person {
+public class Person implements Comparable<Person> {
     private final String firstName;
     private final String lastName;
     private final int birthYear;
@@ -32,5 +32,10 @@ public class Person {
 
     public double getWeight() {
         return weight;
+    }
+
+    @Override
+    public int compareTo(Person otherPerson) {
+        return Integer.compare(this.birthYear, otherPerson.birthYear);
     }
 }

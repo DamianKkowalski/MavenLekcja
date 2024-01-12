@@ -26,7 +26,7 @@ public class PrintPerson {
 
         // Domyślne sortowanie od najmłodszej do najstarszej
         System.out.println("\nDomyślne sortowanie od najmłodszej do najstarszej:");
-        Collections.sort(people, Comparator.comparingInt(Person::getBirthYear));
+        Collections.sort(people);
         displayPeople(people);
     }
 
