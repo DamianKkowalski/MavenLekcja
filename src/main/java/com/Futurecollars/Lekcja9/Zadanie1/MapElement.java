@@ -1,11 +1,11 @@
 package com.Futurecollars.Lekcja9.Zadanie1;
 
-public class Basic {
+public class MapElement {
 
         String key;
-        String value;
+        Integer value;
 
-        public Basic(String key, String value) {
+        public MapElement(String key, Integer value) {
             this.key = key;
             this.value = value;
         }

@@ -5,31 +5,31 @@ import java.util.List;
 
 public class OwnHashMap implements OwnMap{
 
-    private final List<Basic> basics;
+    private final List<MapElement> mapElements;
     public OwnHashMap()
     {
-        this.basics =  new ArrayList<>();
+        this.mapElements =  new ArrayList<>();
     }
 
     @Override
-    public boolean put(String key, String value) {
-        for (Basic basic : basics)
+    public boolean put(String key, Integer value) {
+        for (MapElement mapElement : mapElements)
         {
-            if(basic.key.equals(key))
+            if(mapElement.key.equals(key))
             {
-                basic.value=value;
+                mapElement.value=value;
                 return true;
             }
         }
-        basics.add(new Basic(key, value));
+        mapElements.add(new MapElement(key, value));
         return true;
     }
 
     @Override
     public boolean containsKey(String key) {
-        for (Basic basic : basics)
+        for (MapElement mapElement : mapElements)
         {
-            if(basic.key.equals(key))
+            if(mapElement.key.equals(key))
             {
                 return true;
             }
@@ -39,9 +39,9 @@ public class OwnHashMap implements OwnMap{
 
     @Override
     public boolean containsValue(Object value) {
-        for (Basic basic : basics)
+        for (MapElement mapElement : mapElements)
         {
-            if(basic.value.equals(value))
+            if(mapElement.value.equals(value))
             {
                 return true;
             }
@@ -50,12 +50,12 @@ public class OwnHashMap implements OwnMap{
     }
 
     @Override
-    public String remove(String key) {
-        for (Basic basic : basics)
+    public Integer remove(String key) {
+        for (MapElement mapElement : mapElements)
         {
-            if(basic.key.equals(key))
-            {   String removedValue = basic.value;
-                basics.remove(basic);
+            if(mapElement.key.equals(key))
+            {   Integer removedValue = mapElement.value;
+                mapElements.remove(mapElement);
                 return removedValue;
             }
         }
@@ -63,10 +63,10 @@ public class OwnHashMap implements OwnMap{
     }
 
     @Override
-    public String get(String key) {
-        for (Basic basic : basics) {
-            if (basic.key.equals(key)) {
-                return basic.value;
+    public Integer get(String key) {
+        for (MapElement mapElement : mapElements) {
+            if (mapElement.key.equals(key)) {
+                return mapElement.value;
             }
         }
         return null;
@@ -75,8 +75,8 @@ public class OwnHashMap implements OwnMap{
     public static void main(String[] args) {
         OwnHashMap map = new OwnHashMap();
 
-        map.put("key1", "value1");
-        map.put("key2", "value2");
+        map.put("key1", 1);
+        map.put("key2", 2);
 
         System.out.println("Contains key 'key1': " + map.containsKey("key1"));
         System.out.println("Contains value 'value2': " + map.containsValue("value2"));
