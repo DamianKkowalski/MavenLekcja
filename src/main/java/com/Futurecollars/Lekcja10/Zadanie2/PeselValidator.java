@@ -8,6 +8,9 @@ public class PeselValidator {
 
     public static boolean checkPesel(String pesel)
     {
+        if (pesel == null) {
+            return false;
+        }
         String peselRegex = "\\d{11}";
         Pattern pattern = Pattern.compile(peselRegex);
         Matcher matcher = pattern.matcher(pesel);
