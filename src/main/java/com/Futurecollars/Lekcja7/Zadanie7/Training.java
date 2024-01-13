@@ -11,20 +11,7 @@ public class Training {
         this.averageHeartRate = averageHeartRate;
     }
 
-    public int getDuration() {
-        return duration;
-    }
-
-    public int getBurnedCalories() {
-        return burnedCalories;
-    }
-
-    public int getAverageHeartRate() {
-        return averageHeartRate;
-    }
-
-    public int gradeDuration(int duration)
-    {
+    public int gradeDuration() {
         if (duration < 30) {
             return 1;
         } else if (duration <= 60) {
@@ -33,8 +20,8 @@ public class Training {
             return 3;
         }
     }
-    public int gradeBurnedCalories(int burnedCalories)
-    {
+
+    public int gradeBurnedCalories() {
         if (burnedCalories < 300) {
             return 1;
         } else if (burnedCalories <= 400) {
@@ -43,7 +30,8 @@ public class Training {
             return 3;
         }
     }
-    public int gradeAverageHeartRate(int averageHeartRate) {
+
+    public int gradeAverageHeartRate() {
         if (averageHeartRate < 160) {
             return 3;
         } else if (averageHeartRate <= 175) {
@@ -52,20 +40,21 @@ public class Training {
             return 1;
         }
     }
-    public double calculateScaleAverage(int gradeDuration, int gradeBurnedCalories, int gradeAverageHeartRate) {
+
+    public double calculateScaleAverage() {
         double scaleDuration = 1;
         double scaleBurnedCalories = 2;
         double scaleAverageHeartRate = 3;
 
-        double sum = (gradeDuration * scaleDuration) +
-                (gradeBurnedCalories * scaleBurnedCalories) +
-                (gradeAverageHeartRate * scaleAverageHeartRate);
+        double sum = (gradeDuration() * scaleDuration) + (gradeBurnedCalories() * scaleBurnedCalories) + (gradeAverageHeartRate() * scaleAverageHeartRate);
 
         double sumScale = scaleDuration + scaleBurnedCalories + scaleAverageHeartRate;
 
         return sum / sumScale;
     }
-    public String assessTheEffectivenessOfTraining(double weightenedAverage) {
+
+    public String assessTheEffectivenessOfTraining() {
+        double weightenedAverage = calculateScaleAverage();
         if (weightenedAverage < 1.2) {
             return "Niska";
         } else if (weightenedAverage < 2) {
@@ -76,21 +65,5 @@ public class Training {
             return "Doskonała";
         }
     }
-    public void ocenITrening(Training trening) {
-        int gradeDuration = gradeDuration(trening.getDuration());
-        int gradeBurnedCalories = gradeBurnedCalories(trening.getBurnedCalories());
-        int gradeAverageHeartRate = gradeAverageHeartRate(trening.getAverageHeartRate());
 
-        double ScaleAverage = calculateScaleAverage(gradeDuration, gradeBurnedCalories, gradeAverageHeartRate);
-
-        String gradeEfectiveness = assessTheEffectivenessOfTraining(ScaleAverage);
-
-        // Wyświetlanie wyników
-        System.out.println("Ocena długości treningu: " + gradeDuration );
-        System.out.println("Ocena spalonych kalorii: " + gradeBurnedCalories);
-        System.out.println("Ocena średniego tętna: " + gradeAverageHeartRate);
-        System.out.println("Średnia ważona: " + ScaleAverage);
-        System.out.println("Ocena efektywności treningu: " + gradeEfectiveness);
-    }
 }
-
