@@ -13,7 +13,6 @@ public class FizzBuzz {
             } else System.out.println(number);
         }
     }
-
     public static void main(String[] args) {
         int endValue = 100;
         playFizzBuzz(endValue);
