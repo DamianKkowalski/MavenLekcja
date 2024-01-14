@@ -1,21 +1,13 @@
 package com.Futurecollars.Lekcja4.Zadanie4;
 
-public class BigLetters implements TextFormatter
-{
-    String text;
+import java.util.Objects;
 
-    public String getText(String text)
-    {
-        this.text=text;
-        return text;
-    }
-
+public class BigLetters implements TextFormatter {
     @Override
-    public String formatText(String text)
-    {
+    public String formatText(String text) {
+        Objects.requireNonNull(text, "Input text cannot be null");
         return text.toUpperCase();
     }
-
 
 
 }
