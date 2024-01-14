@@ -1,6 +1,6 @@
 package com.Futurecollars.Lekcja4.Zadanie1;
 
-public class printMessages {
+public class PrintMessages {
     public static void main(String[] args) {
         ConsoleMessage consolemessage = new ConsoleMessage();
         WindowMessage windowMessage = new WindowMessage();
