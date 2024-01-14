@@ -1,20 +1,14 @@
 package com.Futurecollars.Lekcja3.Zadanie5;
 
 public class PithagorasThesis {
-    public static int a;
-    public static int b;
-    public static int c;
 
-    public static int calculation()
-    {
-        if (a*a+b*b==c*c)
-        {
-            System.out.println("Trojkat jest prostokatny");
+    public static boolean isPithagorasTheoremFullfilled(double sideA, double sideB, double sideC) {
+
+
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
+            throw new IllegalArgumentException("Length of the sides should be positive");
         }
-        else
-        {
-            System.out.println("Trojkat nie jest prostokatny");
-        }
-       return a;
+        return sideA * sideA + sideB * sideB == sideC * sideC;
+
     }
 }
