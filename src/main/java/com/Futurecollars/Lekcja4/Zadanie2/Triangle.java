@@ -1,7 +1,8 @@
 package com.Futurecollars.Lekcja4.Zadanie2;
+
 import static java.lang.Math.*;
 
-public class Triangle extends Shape{
+public class Triangle extends Shape {
 
     double a;
     double b;
@@ -11,16 +12,16 @@ public class Triangle extends Shape{
 
 
     @Override
-    public double getArea()
-    {   h=(a+b+c)/2;
-        z=h*((h-a)*(h-b)*(h-c));
-        Area=sqrt(z);
+    public double getArea() {
+        h = (a + b + c) / 2;
+        z = h * ((h - a) * (h - b) * (h - c));
+        Area = sqrt(z);
         return Area;
     }
+
     @Override
-    public double getPerimeter()
-    {
-        Perimeter=a+b+c;
+    public double getPerimeter() {
+        Perimeter = a + b + c;
         return Perimeter;
     }
 }

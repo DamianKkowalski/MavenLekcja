@@ -1,17 +1,19 @@
 package com.Futurecollars.Lekcja4.Zadanie2;
 
-public class Circle extends Shape {
-    double r;
+public class RectangleAndSquare extends Shape {
+
+    double a;
+    double b;
 
     @Override
     public double getArea() {
-        Area = Math.PI * r * r;
+        Area = a * b;
         return Area;
     }
 
     @Override
     public double getPerimeter() {
-        Perimeter = Math.PI * r * 2;
+        Perimeter = 2 * a + 2 * b;
         return Perimeter;
     }
 }
