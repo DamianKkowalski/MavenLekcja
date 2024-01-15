@@ -3,6 +3,7 @@ package com.Futurecollars.Lekcja2.Zadanie1;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 public class CalculatorTest {
 
     @Test
@@ -17,53 +18,53 @@ public class CalculatorTest {
         //then
         Assertions.assertEquals(2, sum);
     }
+
     @Test
-    void shouldSubsTwoValues1and1()
-    {
+    void shouldSubsTwoValues1and1() {
         int value1 = 1;
         int value2 = 1;
 
         //when
-        int subs = Calculator.subs(value1, value2);
+        int subs = Calculator.substraction(value1, value2);
 
         //then
-        Assertions.assertEquals(0,subs);
+        Assertions.assertEquals(0, subs);
     }
+
     @Test
-    void shouldmultTwoValues3and4()
-    {
+    void shouldmultTwoValues3and4() {
         int value1 = 3;
         int value2 = 4;
 
         //when
-        int mult = Calculator.mult(value1, value2);
+        int mult = Calculator.multiplication(value1, value2);
 
         //then
-        Assertions.assertEquals(12,mult);
+        Assertions.assertEquals(12, mult);
     }
+
     @Test
-     void  shoulderiTwoValues4and0()
-    {
+    void shoulderiTwoValues4and0() {
         double value1 = 4;
         double value2 = 0;
 
         //when
-        double deri = Calculator.deri(value1, value2);
+        double deri = Calculator.derivative(value1, value2);
 
         //then
-        Assertions.assertEquals(Double.POSITIVE_INFINITY,deri,"Nieskonczonosc");
+        Assertions.assertEquals(Double.POSITIVE_INFINITY, deri, "Nieskonczonosc");
     }
+
     @Test
-    void  shoulderiTwoValues18and3()
-    {
+    void shoulderiTwoValues18and3() {
         double value1 = 18;
         double value2 = 3;
 
         //when
-        double deri = Calculator.deri(value1, value2);
+        double deri = Calculator.derivative(value1, value2);
 
         //then
-        Assertions.assertEquals(6,deri);
+        Assertions.assertEquals(6, deri);
     }
 
 }
