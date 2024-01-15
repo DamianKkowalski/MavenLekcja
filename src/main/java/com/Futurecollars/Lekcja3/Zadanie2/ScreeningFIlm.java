@@ -3,19 +3,9 @@ package com.Futurecollars.Lekcja3.Zadanie2;
 public class ScreeningFIlm {
 
     public static void main(String[] args) {
-        String title="Marynarze";
-        String name="Damian";
-        String surname="Kowalski";
-        int time=180;
-        int productionYear=1999;
-        Film film=new Film();
-        film.title=title;
-        film.name=name;
-        film.surname=surname;
-        film.time=time;
-        film.productionYear=productionYear;
-        System.out.println("Tytył filmu: "+film.title+"\nAutor filmu: "+film.name+ " " +film.surname+"\nCzas trwania: "+film.time+"\nRok produkcji: "+film.productionYear );
-
-
+        Film film = new Film("Marynarze", "Damian", "Kowalski", 180, 1999);
+        System.out.println("Tytył filmu: " + film.getTitle() + "\nAutor filmu: " + film.getName() + " "
+                            + film.getSurname() + "\nCzas trwania: "
+                            + film.getTime() + "\nRok produkcji: " + film.getProductionYear());
     }
 }
