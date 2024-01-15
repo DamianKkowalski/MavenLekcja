@@ -1,30 +1,21 @@
 package com.Futurecollars.Lekcja3.Zadanie3;
 
- class TicketSeller extends BaseEmployee{
-     int i=2023-YoEmployment;
-    public TicketSeller(String name, String surname, int salary, int YoEmployment)
-    {
+class TicketSeller extends BaseEmployee {
+
+
+    public TicketSeller(String name, String surname, int salary, int YoEmployment) {
         super(name, surname, salary, YoEmployment);
-
-    }
-     @Override
-     public String SalaryPrint()
-    {
-        return "Wynagrodzenie TickerSeller wynosi "+salary;
-
     }
 
-     @Override
-     public int calculateMonthlySalary() {
-         return 0;
-     }
-
-     @Override
-    public String YoWork()
-    {
-        return "Pracownik TicketSeller przepracowal " + i +" lata";
+    @Override
+    public int calculateMonthlySalary() {
+        return salary;
     }
 
+    @Override
+    public int getYearsOfWork() {
+        return 2024 - yearOfEmployment;
+    }
 
 }
 

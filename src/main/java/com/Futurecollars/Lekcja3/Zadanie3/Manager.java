@@ -2,46 +2,36 @@ package com.Futurecollars.Lekcja3.Zadanie3;
 
 import java.util.Scanner;
 
-class Manager extends BaseEmployee{
+class Manager extends BaseEmployee {
 
-     int bonus;
-     int i=2023-YoEmployment;
-     int s;
+    int bonus;
 
-    public Manager(String name, String surname, int salary, int YoEmployment, int bonus)
-    {
-        super(name, surname, salary, YoEmployment);
-        this.bonus=bonus;
-
-
+    public Manager(String name, String surname, int salary, int yearOfEmployement, int bonus) {
+        super(name, surname, salary, yearOfEmployement);
+        this.bonus = bonus;
     }
-     @Override
-     public String SalaryPrint()
-    {
-        return "Wynagrodzenie Managera wynosi "+salary+ " dodatkowy bonus wynosi "+bonus;
 
-    }
-     @Override
-     public String YoWork()
-    {
-        return "Pracownik Manager przepracowal "+i+ " lata";
-    }
-     public int calculateMonthlySalary()
-     {
-        s=salary+bonus;
-
-        return s;
-     }
     @Override
-     public int ChangeBonus()
-     {
-         Scanner sc=new Scanner(System.in);
-         System.out.print("Zmien bonus dla pracownika: ");
-         bonus = sc.nextInt();
-         sc.close();
-         return bonus;
+    public int calculateMonthlySalary() {
+        return salary + bonus;
 
-     }
+    }
+
+    @Override
+    public int getYearsOfWork() {
+        return (2024 - yearOfEmployment);
+    }
+
+
+    @Override
+    public int changeBonus() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Change bonus for the manager ");
+        bonus = sc.nextInt();
+        sc.close();
+        return bonus;
+
+    }
 
 
 }

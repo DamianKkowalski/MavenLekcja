@@ -5,28 +5,24 @@ public abstract class BaseEmployee {
     protected String name;
     protected String surname;
     protected int salary;
-    protected int YoEmployment;
+    protected int yearOfEmployment;
 
-    public BaseEmployee(String name, String surname, int salary, int yoEmployment) {
+    public BaseEmployee(String name, String surname, int salary, int yearOfEmployment) {
         this.name = name;
         this.surname = surname;
         this.salary = salary;
-        this.YoEmployment = yoEmployment;
+        this.yearOfEmployment = yearOfEmployment;
     }
 
-    String YoWork() {
-        return null;
+    int getYearsOfWork() {
+        return yearOfEmployment;
     }
 
-    String SalaryPrint() {
-        return null;
+    public int calculateMonthlySalary() {
+        return salary;
     }
 
-    public abstract int calculateMonthlySalary();
-
-    public int ChangeBonus() {
+    public int changeBonus() {
         return 0;
     }
-
-
 }
