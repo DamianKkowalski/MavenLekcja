@@ -1,33 +1,31 @@
 package com.Futurecollars.Lekcja3.Zadanie4;
 
-import com.Futurecollars.Lekcja3.Zadanie4.Conversion;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static com.Futurecollars.Lekcja3.Zadanie4.ConversionMinutesToSeconds.conversion;
 
 public class ConversionTest {
 
 
-
     @Test
-    void CalculationMinusNumber ()
-    {   Conversion conversion=new Conversion();
+    void CalculationMinusNumber() {
         //given
-        int liczba=-60;
+        int time = -60;
         //when
-        conversion.minutes = liczba;
+        int result = conversion(time);
         //then
-        Assertions.assertFalse(Conversion.conversion()<0,"Czas jest ujemny");
+        Assertions.assertEquals(result > 0, result < 0, "Time is negative");
 
     }
+
     @Test
-    void CalculationPlusNumber()
-    {
-        Conversion conversion=new Conversion();
+    void CalculationPlusNumber() {
         //given
-        int liczba=60;
+        int time = 60;
         //when
-        conversion.minutes = liczba;
+        int result = conversion(time);
         //then
-        Assertions.assertEquals(3600,Conversion.conversion(),"Liczby nie sa rowne, blad");
+        Assertions.assertEquals(3600, result, "Liczby nie sa rowne, blad");
     }
 }
