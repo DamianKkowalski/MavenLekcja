@@ -3,25 +3,25 @@ package com.Futurecollars.Lekcja2.Zadanie3;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class ParzystaTest {
+public class EvenTest {
     @Test
-    void LiczbaJestParzysta ()
+    void numberIsEven ()
     {
         //given
-        int liczba=24;
+        int number=24;
         //when
-        int val = Parzysta.liczba(liczba);
+        int value = Even.checkIfNumberIsOddOrEven(number);
         //then
-        Assertions.assertEquals(0,val);
+        Assertions.assertEquals(0,value);
 
     }
     @Test
-    void LiczbaNieJestParzysta ()
+    void numberIsOdd ()
     {
         //given
-        int liczba=25;
+        int number=25;
         //when
-        int val = Parzysta.liczba(liczba);
+        int val = Even.checkIfNumberIsOddOrEven(number);
         //then
         Assertions.assertEquals(1,val);
 
