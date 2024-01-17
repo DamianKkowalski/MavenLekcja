@@ -1,19 +1,15 @@
 package com.Futurecollars.Lekcja7.Zadanie1;
 
-public class SumAndDivide {
+public class MathUtils {
 
-    int digit;
-    int sumNumbers;
-
-    public boolean divideBy2(int number) {
-        if (number % 2 == 0) {
-            return true;
-        }
-        return false;
+    public static boolean divideBy2(int number) {
+        return number % 2 == 0;
     }
 
-    public int sum(int numbers) {
+    public static int sum(int numbers) {
+        int sumNumbers = 0;
         while (numbers > 0) {
+            int digit;
             digit = numbers % 10;
             sumNumbers = sumNumbers + digit;
             numbers = numbers / 10;
