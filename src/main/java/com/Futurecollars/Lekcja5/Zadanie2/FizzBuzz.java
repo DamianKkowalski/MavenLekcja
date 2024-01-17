@@ -5,8 +5,7 @@ public class FizzBuzz {
         for (int number = 1; number <= endValue; number++) {
             if (number % 15 == 0) {
                 System.out.println("FizzBuzz");
-            }
-            if (number % 3 == 0) {
+            } else if (number % 3 == 0) {
                 System.out.println("Fizz");
             } else if (number % 5 == 0) {
                 System.out.println("Buzz");
